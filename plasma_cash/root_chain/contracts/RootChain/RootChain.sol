@@ -78,7 +78,7 @@ contract RootChain {
         bytes32 uid = keccak256(currency, msg.sender, depositCount);
         wallet[uid] = amount;
         depositCount += 1;
-        Deposit(msg.sender, amount, uint256(uid));
+        emit Deposit(msg.sender, amount, uint256(uid));
     }
 
     // @dev Starts to exit a transaction
