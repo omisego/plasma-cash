@@ -44,7 +44,7 @@ contract RootChain {
     }
 
 
-    function RootChain()
+    constructor ()
         public
     {
         authority = msg.sender;
