@@ -32,7 +32,7 @@ class Deployer(object):
         compiled_sol = compile_standard({
             'language': 'Solidity',
             'sources': {**{path.split('/')[-1]: {'urls': [path]}}, **contracts},
-            'settings': { 'outputSelection': { "*": { "*": ['abi', 'metadata', 'evm.bytecode'] } } }
+            'settings': {'outputSelection': {"*": {"*": ['abi', 'metadata', 'evm.bytecode']}}}
         }, allow_paths=OWN_DIR + "/contracts")
         abi = compiled_sol['contracts'][file_name][contract_name]['abi']
         bytecode = compiled_sol['contracts'][file_name][contract_name]['evm']['bytecode']['object']
