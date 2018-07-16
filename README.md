@@ -142,3 +142,5 @@ flake8 plasma_cash/
 flake8 unit_tests/
 flake8 integration_tests/
 ```
+
+[![codecov](https://codecov.io/gh/boolafish/plasma-cash/branch/master/graph/badge.svg)](https://codecov.io/gh/boolafish/plasma-cash)
