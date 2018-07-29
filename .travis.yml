@@ -10,10 +10,10 @@ install:
   - pip install codecov
   - npm install -g ganache-cli
 script:
-  - pytest --cov=plasma_cash --cov-branch unit_tests/
-  - behave integration_tests/features/
   - flake8 plasma_cash/
   - flake8 unit_tests/
   - flake8 integration_tests/
+  - pytest --cov=plasma_cash --cov-branch unit_tests/
+  - behave integration_tests/features/
 after_success:
   - codecov
