@@ -126,13 +126,10 @@ library RLP {
         view
         returns (address data)
     {
-        uint rStartPos;
         uint len;
-        (rStartPos, len) = _decode(self);
-        require(len == 20);
-        assembly {
-            data := div(mload(rStartPos), exp(256, 12))
-        }
+        (, len) = _decode(self);
+        require(len <= 20);
+        return address(toUint(self));
     }
 
     /// @dev Return the RLP encoded bytes.
