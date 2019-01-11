@@ -97,6 +97,8 @@ contract RootChain {
         // TODO: handle the currency address if it's not zero
         if (currency == address(0)) {
             require(amount * 10**18 == msg.value);
+            // check for overflow
+            require(amount * 10**18 / 10**18 == amount);
         }
         uint uid = uint256(keccak256(currency, msg.sender, depositCount));
         wallet[uid] = funds({
